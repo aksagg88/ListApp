@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 class ListItemsAdapter extends RecyclerView.Adapter<ListItemsHolder>{
 
-    private ArrayList<ListItem> mListItems;
+    private ArrayList<ListItem> mListItems = null;
     private static final String TAG = "ListItemAdapter";
 
     // Provide a suitable constructor (depends on the kind of dataset)
@@ -46,6 +46,9 @@ class ListItemsAdapter extends RecyclerView.Adapter<ListItemsHolder>{
 
     @Override
     public int getItemCount() {
-        return mListItems.size();
+        if(mListItems==null)
+            return 0;
+        else
+            return mListItems.size();
     }
 }
